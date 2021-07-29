@@ -11,13 +11,16 @@ const Login = (props) => {
 
    const handleSubmit = (event) => {
       event.preventDefault();
+
       const password = event.target.password.value;
       const email = event.target.email.value;
 
       const x = data.find(e => e.email===email && e.password===password);
 
       if(x!==undefined ){
-         props.changeUserState();
+         props.changeUserState(email);
+         sessionStorage.setItem("email",email);
+         sessionStorage.setItem("password",password);
       }
       history.push("/secrets");
    }
