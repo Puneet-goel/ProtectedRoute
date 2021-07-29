@@ -6,7 +6,7 @@ const ProtectedRoute = ({mainPage, errorPage, isValid}) => {
     return (
     	<div>
 	    	{
-                (isValid.email)
+                (isValid)
                 ?<Route render={() => mainPage} />
                 :<Route render={() => errorPage}/>
             }

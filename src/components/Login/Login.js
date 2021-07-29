@@ -1,25 +1,25 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, Button, FormText } from "reactstrap";
-import { Link } from "react-router-dom";
-import data from "../../api/api.js";
+import { useHistory } from "react-router";
 
+import data from "../../api/api.js";
 import "./styles.css";
 
 const Login = (props) => {
+
+   const history = useHistory();
 
    const handleSubmit = (event) => {
       event.preventDefault();
       const password = event.target.password.value;
       const email = event.target.email.value;
 
-      const x = data.find( (e) => (e.email===email && e.password===password));
-      if(x!==undefined){
-         props.setUser({
-            'email': email,
-            'password': password
-         });
-         console.log(props.user);
+      const x = data.find(e => e.email===email && e.password===password);
+
+      if(x!==undefined ){
+         props.changeUserState();
       }
+      history.push("/secrets");
    }
 
    return (
@@ -37,9 +37,7 @@ const Login = (props) => {
             <Input id="password" type="password" name="password"  placeholder="Password" />
          </FormGroup>
          <Button color="primary" className="btn btn-lg btn-block">
-            <Link to="/secrets">
-               Login
-            </Link>
+            Login
          </Button>
       </Form>
    );
