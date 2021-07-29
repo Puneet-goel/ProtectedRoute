@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProtectedRoute = () => {
+const ProtectedRoute = (props) => {
   return (
     <div>
         Validate User
