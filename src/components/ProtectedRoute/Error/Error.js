@@ -3,11 +3,7 @@ import React from 'react';
 const Error = () => {
 
     return (
-    	<div>
-	    	<h1>
-                Error!! No such User Credentials
-            </h1>
-	    </div>
+    	<h1 className="text-center text-warning mt-5"> Error!! No such User Credentials </h1>
     );
 }
 

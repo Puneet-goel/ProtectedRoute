@@ -1,15 +1,25 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, Button, FormText } from "reactstrap";
 import { Link } from "react-router-dom";
+import data from "../../api/api.js";
 
 import "./styles.css";
 
-const Login = () => {
+const Login = (props) => {
 
    const handleSubmit = (event) => {
-      localStorage.setItem("password",event.target.password.value);
-      localStorage.setItem("email",event.target.email.value);
       event.preventDefault();
+      const password = event.target.password.value;
+      const email = event.target.email.value;
+
+      const x = data.find( (e) => (e.email===email && e.password===password));
+      if(x!==undefined){
+         props.setUser({
+            'email': email,
+            'password': password
+         });
+         console.log(props.user);
+      }
    }
 
    return (
@@ -27,9 +37,9 @@ const Login = () => {
             <Input id="password" type="password" name="password"  placeholder="Password" />
          </FormGroup>
          <Button color="primary" className="btn btn-lg btn-block">
-            <Link to="/protectedRoute">
+            <Link to="/secrets">
                Login
-            </Link>   
+            </Link>
          </Button>
       </Form>
    );

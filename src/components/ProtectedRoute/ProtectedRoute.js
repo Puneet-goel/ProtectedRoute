@@ -1,31 +1,15 @@
 import React from 'react';
-import data from "../../api/api.js";
+import { Route } from "react-router-dom";
 
-const checkUserCredentials = () => {
+const ProtectedRoute = ({mainPage, errorPage, isValid}) => {
 
-    const password = localStorage.getItem("password");
-    const email = localStorage.getItem("email");
-
-    localStorage.clear();
-
-    const x = data.find( (element) => element.email===email && element.password===password);
-
-    if(x===undefined){
-        return false;
-    }
-    else{
-        return true;
-    }
-}
-
-const ProtectedRoute = () => {
-
-	const bool = checkUserCredentials();
     return (
     	<div>
 	    	{
-	    		(bool)?"Validate User":"soory!"
-	    	}
+                (isValid.email)
+                ?<Route render={() => mainPage} />
+                :<Route render={() => errorPage}/>
+            }
 	    </div>
     );
 }
