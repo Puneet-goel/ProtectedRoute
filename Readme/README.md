@@ -3,9 +3,9 @@
 ## Step 1. Clone this repository in your system
 git clone https://github.com/Puneet-goel/react-login.git
 
-## Step 2. Install the dependencies
+## Step 2. Install the dependencies `npm i`
 
-To install the dependencies, run the given command:
+To install the dependencies, run the given command:\
 npm i 
 
 ### Step 3. `npm start`
