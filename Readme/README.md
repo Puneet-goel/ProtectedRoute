@@ -1,7 +1,7 @@
 # Instructions on how to run the application
 
 ## Step 1. Clone this repository in your system
-git clone https://github.com/Puneet-goel/ProtectedRoute.git
+git clone https://github.com/puneet-goel/ProtectedRoute.git
 
 ## Step 2. Install the dependencies `npm i`
 
