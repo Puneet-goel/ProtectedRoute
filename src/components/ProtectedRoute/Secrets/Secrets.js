@@ -1,10 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button } from "reactstrap";
 
-const Secrets = () => {
+const Secrets = (props) => {
 
-	const logout = () => {
+	const history = useHistory();
+	const logout = (event) => {
+		event.preventDefault();
+		props.changeUserState(false);
 		sessionStorage.clear();
+		history.push('/');
 	}
 
     return (

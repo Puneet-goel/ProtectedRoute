@@ -12,9 +12,9 @@ function App() {
 	const changeUserState = (email) => setUser(email);
 	
 	useEffect(() => {
-		const x = sessionStorage.getItem("email");
-		if(x){
-			setUser(x);
+		const email = sessionStorage.getItem("email");	
+		if(email){
+			setUser(email);
 		}
 	},[]);
 
@@ -22,7 +22,7 @@ function App() {
 	  	<BrowserRouter>
 	  	    <Switch>
 	  	        <Route path="/secrets">
-	                <ProtectedRoute mainPage={<Secrets />} errorPage={<Error />} isValid={user}/>
+	                <ProtectedRoute mainPage={<Secrets changeUserState={changeUserState}/>} errorPage={<Error />} isValid={user} />
 	            </Route> 
 	            <Route exact path="/">
 	                {user ? <Redirect to="/secrets" /> : <Login changeUserState={changeUserState}/>}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, Button, FormText } from "reactstrap";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 import data from "../../api/api.js";
 import "./styles.css";
@@ -24,7 +24,7 @@ const Login = (props) => {
       }
       history.push("/secrets");
    }
-
+   
    return (
       <Form className="form" onSubmit={handleSubmit}>
          <h2 className="text-center"> Login </h2>
