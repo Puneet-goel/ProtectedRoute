@@ -1,17 +1,18 @@
-# Instructions on how to run the application
-
 ## Link to Web Application
 https://protectedroute-puneet.netlify.app
+
+<br />
+
+### Instructions on how to run the application
 
 ## Step 1. Clone this repository in your system
 git clone https://github.com/puneet-goel/protected-route.git
 
 ## Step 2. Install the dependencies `npm i`
 
-To install the dependencies, run the given command:\
-npm i 
+To install the dependencies, run the given command : npm i 
 
-### Step 3. `npm start`
+## Step 3. `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
